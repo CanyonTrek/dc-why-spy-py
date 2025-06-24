@@ -9,8 +9,11 @@ class DataClerk:
     def __init__(self, file_log):
         self._file_log = file_log
 
+    def get_time(self):
+        return datetime.now().time()
+
     def process_data(self):
-        now = datetime.now().time()
+        now = self.get_time() 
         stop_time = time(20, 0)  # 20:00 in 24-hour format
 
         if now < stop_time:
